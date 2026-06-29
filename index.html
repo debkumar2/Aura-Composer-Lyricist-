@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aura Studios | Master The Sound</title>
+    <meta name="description"
+        content="Aura Studios — Premium music production, composition and lyric artistry. Crafting sound that resonates at the deepest human level.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;800&family=Inter:wght@300;400;600&family=Syne:wght@400;700;800&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <!-- Noise & Ambient -->
+    <div class="noise-overlay"></div>
+    <div class="ambient-background">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="custom-cursor"></div>
+    <div class="cursor-follower"></div>
+
+
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader-half preloader-top"></div>
+        <div class="preloader-half preloader-bottom"></div>
+        <div class="preloader-content">
+            <div class="innovative-loader">
+                <video autoplay loop muted playsinline class="loader-video">
+                    <source src="assets/video01.mp4" type="video/mp4">
+                </video>
+                <div class="loader-text-mask">
+                    <div class="floating-art swara-float-1">सा रे ग म प ध नि</div>
+                    <div class="floating-art lyric-float-1">"The ink flows like a river of sound..."</div>
+                    <div class="floating-art swara-float-2">नि ध प म ग रे सा</div>
+                    <div class="floating-art lyric-float-2">"...and the raag awakens the spirit."</div>
+                    <h1 class="naad-text">A U R A</h1>
+                    <p class="naad-subtext">COMPOSER &amp; LYRICIST</p>
+                </div>
+                <div class="sitar-slice"></div>
+                <div class="eq-container">
+                    <div class="eq-bar"></div>
+                    <div class="eq-bar"></div>
+                    <div class="eq-bar"></div>
+                    <div class="eq-bar"></div>
+                    <div class="eq-bar"></div>
+                    <div class="eq-bar"></div>
+                    <div class="eq-bar"></div>
+                    <div class="eq-bar"></div>
+                    <div class="eq-bar"></div>
+                    <div class="eq-bar"></div>
+                    <div class="eq-bar"></div>
+                    <div class="eq-bar"></div>
+                </div>
+                <div class="loader-status naad-status" id="loaderText">PENNING LYRICS &amp; TUNING STRINGS...</div>
+                <div class="loading-progress-percentage" id="loaderPercentage">0%</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar compact-nav">
+        <div class="nav-logo">AURA</div>
+        <div class="nav-links">
+            <a href="#about" class="magnetic" data-strength="15">Story</a>
+            <a href="#music" class="magnetic" data-strength="15">Music</a>
+            <a href="#studio" class="magnetic" data-strength="15">Studio</a>
+            <a href="#projects" class="magnetic" data-strength="15">Projects</a>
+            <a href="#awards" class="magnetic" data-strength="15">Awards</a>
+        </div>
+        <div class="nav-contact" style="display:flex;align-items:center;gap:1rem;">
+            <button class="btn-primary magnetic" data-strength="30">Book</button>
+            <div class="hamburger" id="hamburgerBtn">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Overlay -->
+    <div class="mobile-overlay" id="mobileOverlay">
+        <button class="mobile-close" id="mobileClose">✕</button>
+        <a href="#about">Story</a>
+        <a href="#music">Music</a>
+        <a href="#studio">Studio</a>
+        <a href="#projects">Projects</a>
+        <a href="#awards">Awards</a>
+    </div>
+
+    <main class="smooth-scroll">
+
+        <!-- Hero -->
+        <section class="hero">
+            <div class="swiper hero-swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="hero-bg">
+                            <div class="overlay"></div><img src="./assets/bannerSlide01.png" alt="Studio Setup">
+                        </div>
+                        <div class="hero-content">
+                            <p class="hero-subtitle">Composer • Lyricist</p>
+                            <h1 class="hero-title">Sound beyond <br>imagination.</h1>
+                            <div class="hero-actions">
+                                <button class="btn-primary magnetic" data-strength="30">Listen Now</button>
+                                <button class="btn-secondary magnetic" data-strength="30">Explore Studio</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="hero-bg">
+                            <div class="overlay"></div><img
+                                src="https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?auto=format&fit=crop&q=80&w=2070"
+                                alt="Vocal Booth">
+                        </div>
+                        <div class="hero-content">
+                            <p class="hero-subtitle">Premium Recording</p>
+                            <h1 class="hero-title">Capture Your <br>True Voice.</h1>
+                            <div class="hero-actions">
+                                <button class="btn-primary magnetic" data-strength="30">Book Session</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="hero-bg">
+                            <div class="overlay"></div><img src="./assets/bannerSlide03.png" alt="Live Performance">
+                        </div>
+                        <div class="hero-content">
+                            <p class="hero-subtitle">Global Reach</p>
+                            <h1 class="hero-title">World-Class <br>Sound.</h1>
+                            <div class="hero-actions">
+                                <button class="btn-primary magnetic" data-strength="30">View Portfolio</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+            <div class="scroll-indicator">
+                <p>Scroll to explore</p>
+                <div class="line"></div>
+            </div>
+        </section>
+
+        <!-- Lyrics Marquee -->
+        <section class="lyrics-section">
+            <div class="marquee-row bright">
+                <div class="marquee-track">
+                    <span>MIDNIGHT ECHOES</span><span>•</span><span>NEON RESONANCE</span><span>•</span><span>ACOUSTIC
+                        SOUL</span><span>•</span><span>CULTURAL FUSION</span><span>•</span><span>INDIAN
+                        RHYTHMS</span><span>•</span><span>SOULFUL MELODIES</span><span>•</span>
+                    <span>MIDNIGHT ECHOES</span><span>•</span><span>NEON RESONANCE</span><span>•</span><span>ACOUSTIC
+                        SOUL</span><span>•</span><span>CULTURAL FUSION</span><span>•</span><span>INDIAN
+                        RHYTHMS</span><span>•</span><span>SOULFUL MELODIES</span><span>•</span>
+                </div>
+            </div>
+            <div class="marquee-row reverse">
+                <div class="marquee-track">
+                    <span>"The ink flows like a river of sound..."</span><span>✦</span><span>"Every raga is a story
+                        untold..."</span><span>✦</span><span>"In silence, the music finds its
+                        voice..."</span><span>✦</span><span>"नाद ब्रह्म — Sound is the universe"</span><span>✦</span>
+                    <span>"The ink flows like a river of sound..."</span><span>✦</span><span>"Every raga is a story
+                        untold..."</span><span>✦</span><span>"In silence, the music finds its
+                        voice..."</span><span>✦</span><span>"नाद ब्रह्म — Sound is the universe"</span><span>✦</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Artist Story -->
+        <section id="about" class="artist-story">
+            <div class="container">
+                <div class="story-grid">
+                    <div class="story-text">
+                        <h2 class="section-title split-text">The Architect<br>of Emotion</h2>
+                        <p class="fade-up">With over a decade of shaping the auditory landscape, we blend analog warmth
+                            with digital precision. Every lyric penned and every note composed is designed to resonate
+                            at the deepest human level.</p>
+                        <div class="stats fade-up">
+                            <div class="stat-item">
+                                <span class="stat-num">12+</span>
+                                <span class="stat-label">Years of Mastery</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-num">500+</span>
+                                <span class="stat-label">Tracks Produced</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="story-image">
+                        <div class="img-wrapper reveal-image">
+                            <img src="https://images.unsplash.com/photo-1598653222000-6b7b7a552625?auto=format&fit=crop&q=80&w=1000"
+                                alt="Artist at work">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Music Showcase -->
+        <section id="music" class="music-showcase">
+            <div class="container">
+                <h2 class="section-title split-text">Sonic Canvas</h2>
+                <div class="album-grid">
+                    <div class="album-card fade-up">
+                        <div class="album-cover">
+                            <video src="assets/video01.mp4" autoplay loop muted playsinline></video>
+                            <div class="play-overlay">
+                                <div class="play-btn"></div>
+                            </div>
+                        </div>
+                        <div class="album-info">
+                            <h3>Midnight Echoes</h3>
+                            <p>Cinematic LP</p>
+                        </div>
+                    </div>
+                    <div class="album-card fade-up" style="transition-delay:0.1s">
+                        <div class="album-cover">
+                            <video src="assets/video02.mp4" autoplay loop muted playsinline></video>
+                            <div class="play-overlay">
+                                <div class="play-btn"></div>
+                            </div>
+                        </div>
+                        <div class="album-info">
+                            <h3>Neon Resonance</h3>
+                            <p>Electronic EP</p>
+                        </div>
+                    </div>
+                    <div class="album-card fade-up" style="transition-delay:0.2s">
+                        <div class="album-cover">
+                            <video src="assets/video03.mp4" autoplay loop muted playsinline></video>
+                            <div class="play-overlay">
+                                <div class="play-btn"></div>
+                            </div>
+                        </div>
+                        <div class="album-info">
+                            <h3>Acoustic Soul</h3>
+                            <p>Live Sessions</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Kinetic Lyrics -->
+
+        <!-- Studio Experience -->
+        <section id="studio" class="studio-experience">
+            <div class="container">
+                <div class="studio-header text-center" style="margin-bottom:4rem;">
+                    <h2 class="section-title split-text">The Sanctuary</h2>
+                    <p class="fade-up" style="margin:0 auto;">A state-of-the-art playground where ideas become timeless
+                        records.</p>
+                </div>
+                <div class="studio-cards-container">
+                    <div class="studio-card">
+                        <img src="./assets/studio_card01.png" alt="Studio Gear">
+                        <div class="card-info">
+                            <h3>Mixing Console</h3>
+                            <p>SSL Duality Delta</p>
+                        </div>
+                    </div>
+                    <div class="studio-card">
+                        <img src="https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?auto=format&fit=crop&q=80&w=1200"
+                            alt="Recording Room">
+                        <div class="card-info">
+                            <h3>Vocal Booth</h3>
+                            <p>Acoustically Perfected</p>
+                        </div>
+                    </div>
+                    <div class="studio-card">
+                        <img src="https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?auto=format&fit=crop&q=80&w=1200"
+                            alt="Instruments">
+                        <div class="card-info">
+                            <h3>Vintage Keys</h3>
+                            <p>Analog Synthesizers &amp; Grand Piano</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Timeline -->
+        <section class="process-section">
+            <div class="container">
+                <h2 class="section-title split-text">How We Create</h2>
+                <div class="process-grid">
+                    <!-- Left steps -->
+                    <div>
+                        <div class="process-step right" data-step="1">
+                            <div class="process-step-num">01</div>
+                            <h3>Concept &amp; Vision</h3>
+                            <p>Every great track begins with a story. We sit with you, understand your emotion, and
+                                sculpt the sonic identity from scratch.</p>
+                        </div>
+                        <div class="process-step right mt-2" data-step="3">
+                            <div class="process-step-num">03</div>
+                            <h3>Recording &amp; Production</h3>
+                            <p>Inside our acoustically treated studio, we capture every nuance — from the breath before
+                                a note to the final chord's decay.</p>
+                        </div>
+                        <div class="process-step right mt-2" data-step="5">
+                            <div class="process-step-num">05</div>
+                            <h3>Mastering &amp; Delivery</h3>
+                            <p>Precision mastering ensures your music translates perfectly across every platform,
+                                speaker, and screen in the world.</p>
+                        </div>
+                    </div>
+                    <!-- Center line -->
+                    <div class="process-line">
+                        <div class="process-line-track">
+                            <div class="process-line-fill"></div>
+                        </div>
+                        <div class="process-dot" data-dot="1"></div>
+                        <div class="process-dot" data-dot="2"></div>
+                        <div class="process-dot" data-dot="3"></div>
+                        <div class="process-dot" data-dot="4"></div>
+                        <div class="process-dot" data-dot="5"></div>
+                    </div>
+                    <!-- Right steps -->
+                    <div>
+                        <div class="process-step mt-6" data-step="2">
+                            <div class="process-step-num">02</div>
+                            <h3>Lyric &amp; Composition</h3>
+                            <p>Words and melody are born together. Our lyricists and composers work in unison to create
+                                compositions that feel inevitable.</p>
+                        </div>
+                        <div class="process-step mt-2" data-step="4">
+                            <div class="process-step-num">04</div>
+                            <h3>Mixing &amp; Sound Design</h3>
+                            <p>Layer by layer, we build the sonic landscape — balancing frequencies, adding texture, and
+                                making every element shine.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Projects -->
+        <section id="projects" class="projects">
+            <div class="container">
+                <h2 class="section-title split-text">Featured Works</h2>
+                <div class="bento-grid">
+                    <div class="bento-item large reveal-image">
+                        <img src="./assets/card01.png" alt="Indian Rhythms">
+                        <div class="bento-content">
+                            <h3>Indian Rhythms</h3>
+                            <p>Percussion Library</p>
+                        </div>
+                    </div>
+                    <div class="bento-item reveal-image">
+                        <img src="./assets/card02.png" alt="Tradition Revived">
+                        <div class="bento-content">
+                            <h3>Tradition Revived</h3>
+                            <p>Indian Classical Pack</p>
+                        </div>
+                    </div>
+                    <div class="bento-item reveal-image">
+                        <img src="./assets/card03.png" alt="Soulful Melodies">
+                        <div class="bento-content">
+                            <h3>Soulful Melodies</h3>
+                            <p>Ethnic Flute Loops</p>
+                        </div>
+                    </div>
+                    <div class="bento-item wide reveal-image">
+                        <img src="./assets/card04.png" alt="Cultural Fusion">
+                        <div class="bento-content">
+                            <h3>Cultural Fusion</h3>
+                            <p>World Indian Fusion</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Awards -->
+        <section id="awards" class="awards-section">
+            <div class="container">
+                <h2 class="section-title split-text text-center">Hall of Fame</h2>
+                <div class="awards-grid">
+                    <div class="award-card fade-up">
+                        <div class="award-icon">🏆</div>
+                        <div class="counter" data-target="15">0</div>
+                        <p>Grammy Nominations</p>
+                    </div>
+                    <div class="award-card fade-up" style="transition-delay:0.1s">
+                        <div class="award-icon">💿</div>
+                        <div class="counter" data-target="4">0</div>
+                        <p>Platinum Records</p>
+                    </div>
+                    <div class="award-card fade-up" style="transition-delay:0.2s">
+                        <div class="award-icon">🎬</div>
+                        <div class="counter" data-target="12">0</div>
+                        <p>Best Original Scores</p>
+                    </div>
+                    <div class="award-card fade-up" style="transition-delay:0.3s">
+                        <div class="award-icon">🌍</div>
+                        <div class="counter" data-target="50">0</div>
+                        <p>Million Streams</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="testimonials">
+            <div class="container">
+                <div class="swiper testimonial-swiper fade-up">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="testimonial-card">
+                                <div class="quote-icon">"</div>
+                                <p class="test-text">Aura brings a level of emotional depth and technical brilliance
+                                    that is extremely rare. They didn't just produce my track; they breathed life into
+                                    it.</p>
+                                <div class="client-info">
+                                    <h4>Elena Rostova</h4>
+                                    <p>Platinum Selling Artist</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="testimonial-card">
+                                <div class="quote-icon">"</div>
+                                <p class="test-text">The studio environment is simply magical. Every piece of gear is
+                                    pristine, and the acoustic treatment makes recording an absolute dream.</p>
+                                <div class="client-info">
+                                    <h4>Marcus Vance</h4>
+                                    <p>Film Composer</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="testimonial-card">
+                                <div class="quote-icon">"</div>
+                                <p class="test-text">They understand exactly what a song needs to stand out globally.
+                                    The mixing and mastering were on another level entirely.</p>
+                                <div class="client-info">
+                                    <h4>Sarah Jin</h4>
+                                    <p>Indie Pop Sensation</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination testimonial-pagination"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer / Contact -->
+        <footer class="contact-section">
+            <div class="container">
+                <div class="footer-top fade-up">
+                    <h2 class="massive-title split-text" style="margin-bottom: 0;">LET'S MAKE</h2>
+                    <h2 class="massive-title split-text">NOISE.</h2>
+                </div>
+                <div class="contact-grid">
+                    <div class="contact-info fade-up">
+                        <div class="contact-details">
+                            <p class="label">Inquiries</p>
+                            <h3><a href="mailto:hello@aurastudios.com" class="magnetic"
+                                    data-strength="10">hello@aurastudios.com</a></h3>
+                            <p class="label">Direct Line</p>
+                            <h3>+91 98765 43210</h3>
+                            <p class="label">Location</p>
+                            <h3>Mumbai, India</h3>
+                        </div>
+                        <div class="social-links">
+                            <a href="#" class="magnetic" data-strength="15">IG</a>
+                            <a href="#" class="magnetic" data-strength="15">SP</a>
+                            <a href="#" class="magnetic" data-strength="15">YT</a>
+                        </div>
+                    </div>
+                    <div class="contact-form fade-up">
+                        <form id="bookingForm">
+                            <div class="input-group">
+                                <input type="text" id="name" required placeholder=" ">
+                                <label for="name">Your Name</label>
+                            </div>
+                            <div class="input-group">
+                                <input type="email" id="email" required placeholder=" ">
+                                <label for="email">Email Address</label>
+                            </div>
+                            <div class="input-group">
+                                <select id="project" required>
+                                    <option value="" disabled selected>Project Type</option>
+                                    <option value="production">Music Production</option>
+                                    <option value="mixing">Mixing &amp; Mastering</option>
+                                    <option value="scoring">Film Scoring</option>
+                                    <option value="studio">Studio Rental</option>
+                                </select>
+                            </div>
+                            <div class="input-group">
+                                <textarea id="message" rows="4" required placeholder=" "></textarea>
+                                <label for="message">Project Details</label>
+                            </div>
+                            <button type="submit" class="btn-primary magnetic" data-strength="30">Submit
+                                Inquiry</button>
+                        </form>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2026 Aura Studios. All rights reserved.</p>
+                    <div class="footer-links">
+                        <a href="#">Privacy</a>
+                        <a href="#">Terms</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+    <script src="https://unpkg.com/split-type"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
