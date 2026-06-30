@@ -55,7 +55,7 @@ const cursor = document.querySelector('.custom-cursor');
 const follower = document.querySelector('.cursor-follower');
 let mouseX = 0, mouseY = 0, cursorX = 0, cursorY = 0, followerX = 0, followerY = 0;
 
-const notes = ['♩','♪','♫','♬','𝄞','𝄢'];
+const notes = ['♩', '♪', '♫', '♬', '𝄞', '𝄢'];
 let lastParticleTime = 0;
 
 document.addEventListener('mousemove', (e) => {
@@ -82,8 +82,10 @@ function spawnNoteParticle(x, y) {
     document.body.appendChild(p);
     gsap.fromTo(p,
         { x: 0, y: 0, opacity: 1, scale: 1 },
-        { x: (Math.random() - 0.5) * 60, y: -60 - Math.random() * 40, opacity: 0, scale: 0.4, duration: 1.2, ease: "power2.out",
-          onComplete: () => p.remove() }
+        {
+            x: (Math.random() - 0.5) * 60, y: -60 - Math.random() * 40, opacity: 0, scale: 0.4, duration: 1.2, ease: "power2.out",
+            onComplete: () => p.remove()
+        }
     );
 }
 
@@ -301,10 +303,10 @@ function initTimeline() {
 window.addEventListener('load', () => {
     const statusTexts = ["CALIBRATING FREQUENCIES...", "WARMING UP TUBES...", "MASTERING AUDIO...", "READY."];
     let textObj = { value: 0 };
-    gsap.to(textObj, { value: 3, duration: 0.5, snap: "value", ease: "none", onUpdate: () => { const el = document.getElementById('loaderText'); if(el) el.innerText = statusTexts[Math.round(textObj.value)]; } });
+    gsap.to(textObj, { value: 3, duration: 0.5, snap: "value", ease: "none", onUpdate: () => { const el = document.getElementById('loaderText'); if (el) el.innerText = statusTexts[Math.round(textObj.value)]; } });
 
     let percentObj = { value: 0 };
-    gsap.to(percentObj, { value: 100, duration: 0.5, ease: "power3.inOut", onUpdate: () => { const el = document.getElementById('loaderPercentage'); if(el) el.innerText = Math.round(percentObj.value) + '%'; } });
+    gsap.to(percentObj, { value: 100, duration: 0.5, ease: "power3.inOut", onUpdate: () => { const el = document.getElementById('loaderPercentage'); if (el) el.innerText = Math.round(percentObj.value) + '%'; } });
 
     // EQ bars animation
     const eqBars = document.querySelectorAll('.eq-bar');
@@ -314,12 +316,12 @@ window.addEventListener('load', () => {
 
     const tl = gsap.timeline({ delay: 0.5 });
     tl.to(eqBars, { height: 0, opacity: 0, stagger: 0.04, duration: 0.3, ease: "power2.in" })
-      .to('.preloader-content', { opacity: 0, duration: 0.4 }, "-=0.2")
-      .to('.preloader-top', { y: '-100%', duration: 1.2, ease: "power4.inOut" }, "split")
-      .to('.preloader-bottom', { y: '100%', duration: 1.2, ease: "power4.inOut" }, "split")
-      .set('.preloader', { display: 'none' })
-      .from('.hero-bg img', { scale: 1.4, duration: 2, ease: "power4.out" }, "-=1")
-      .from('.navbar', { y: -80, opacity: 0, duration: 1, ease: "power3.out" }, "-=1.5");
+        .to('.preloader-content', { opacity: 0, duration: 0.4 }, "-=0.2")
+        .to('.preloader-top', { y: '-100%', duration: 1.2, ease: "power4.inOut" }, "split")
+        .to('.preloader-bottom', { y: '100%', duration: 1.2, ease: "power4.inOut" }, "split")
+        .set('.preloader', { display: 'none' })
+        .from('.hero-bg img', { scale: 1.4, duration: 2, ease: "power4.out" }, "-=1")
+        .from('.navbar', { y: -80, opacity: 0, duration: 1, ease: "power3.out" }, "-=1.5");
 
     const splitTitles = new SplitType('.section-title, .hero-title', { types: 'chars, words' });
 
@@ -328,14 +330,14 @@ window.addEventListener('load', () => {
         tl.fromTo(firstChars, { y: 110, opacity: 0 }, { y: 0, opacity: 1, stagger: 0.025, duration: 1.2, ease: "power4.out" }, "-=0.8");
     }
     tl.from('.scroll-indicator', { opacity: 0, duration: 1 }, "-=0.5")
-      .call(() => {
-          heroSwiper.autoplay.start();
-          initScrollAnimations();
-          initVisualizer();
-          initMiniPlayer();
-          initMarquee();
-          initTimeline();
-      });
+        .call(() => {
+            heroSwiper.autoplay.start();
+            initScrollAnimations();
+            initVisualizer();
+            initMiniPlayer();
+            initMarquee();
+            initTimeline();
+        });
 });
 
 // ─── SCROLL ANIMATIONS ───────────────────────────────────────────────────────
@@ -354,10 +356,10 @@ function initScrollAnimations() {
     // Image reveals
     document.querySelectorAll('.reveal-image').forEach(wrapper => {
         const img = wrapper.querySelector('img');
-        const tl = gsap.timeline({ scrollTrigger: { trigger: wrapper, start: "top 80%" } });
+        const tl = gsap.timeline({ scrollTrigger: { trigger: wrapper, start: "top 80%", once: true } });
         tl.to(wrapper, { clipPath: "polygon(0 0%, 100% 0%, 100% 100%, 0% 100%)", duration: 1.5, ease: "power4.inOut" })
-          .from(img, { scale: 1.3, duration: 1.5, ease: "power4.inOut" }, "-=1.5")
-          .from(wrapper.querySelectorAll('.bento-content, .card-info'), { y: 20, opacity: 0, duration: 0.8, ease: "power3.out" }, "-=1");
+            .from(img, { scale: 1.3, duration: 1.5, ease: "power4.inOut" }, "-=1.5")
+            .from(wrapper.querySelectorAll('.bento-content, .card-info'), { y: 20, opacity: 0, duration: 0.8, ease: "power3.out" }, "-=1");
     });
 
     // Sticky studio cards
@@ -412,8 +414,9 @@ function initScrollAnimations() {
     lyricLines.forEach((line, i) => {
         gsap.fromTo(line,
             { x: i % 2 === 0 ? '8%' : '-8%', opacity: 0 },
-            { x: '0%', opacity: 1, duration: 1.2, ease: "power3.out",
-              scrollTrigger: { trigger: line, start: 'top 85%' }
+            {
+                x: '0%', opacity: 1, duration: 1.2, ease: "power3.out",
+                scrollTrigger: { trigger: line, start: 'top 85%' }
             }
         );
     });
