@@ -226,7 +226,7 @@ function initMiniPlayer() {
     // Reveal player after preloader
     setTimeout(() => {
         gsap.to(player, { opacity: 1, y: 0, duration: 0.8, ease: "power3.out" });
-    }, 4000);
+    }, 1500);
 
     // Track progress bar drag
     const track = document.querySelector('.mp-progress-track');
@@ -301,10 +301,10 @@ function initTimeline() {
 window.addEventListener('load', () => {
     const statusTexts = ["CALIBRATING FREQUENCIES...", "WARMING UP TUBES...", "MASTERING AUDIO...", "READY."];
     let textObj = { value: 0 };
-    gsap.to(textObj, { value: 3, duration: 2.5, snap: "value", ease: "none", onUpdate: () => { const el = document.getElementById('loaderText'); if(el) el.innerText = statusTexts[Math.round(textObj.value)]; } });
+    gsap.to(textObj, { value: 3, duration: 0.5, snap: "value", ease: "none", onUpdate: () => { const el = document.getElementById('loaderText'); if(el) el.innerText = statusTexts[Math.round(textObj.value)]; } });
 
     let percentObj = { value: 0 };
-    gsap.to(percentObj, { value: 100, duration: 2.5, ease: "power3.inOut", onUpdate: () => { const el = document.getElementById('loaderPercentage'); if(el) el.innerText = Math.round(percentObj.value) + '%'; } });
+    gsap.to(percentObj, { value: 100, duration: 0.5, ease: "power3.inOut", onUpdate: () => { const el = document.getElementById('loaderPercentage'); if(el) el.innerText = Math.round(percentObj.value) + '%'; } });
 
     // EQ bars animation
     const eqBars = document.querySelectorAll('.eq-bar');
@@ -312,7 +312,7 @@ window.addEventListener('load', () => {
         gsap.to(eqBars, { height: 'random(10, 60)', duration: 0.15, repeat: -1, yoyo: true, ease: "none", stagger: { each: 0.05, repeat: -1 } });
     }
 
-    const tl = gsap.timeline({ delay: 3 });
+    const tl = gsap.timeline({ delay: 0.5 });
     tl.to(eqBars, { height: 0, opacity: 0, stagger: 0.04, duration: 0.3, ease: "power2.in" })
       .to('.preloader-content', { opacity: 0, duration: 0.4 }, "-=0.2")
       .to('.preloader-top', { y: '-100%', duration: 1.2, ease: "power4.inOut" }, "split")
